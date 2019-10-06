@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semi Restful </title>
+</head>
+<body>
+        <div class="container">
+                <h2>Edit a user {{user.id}}</h2>
+                <form action="/users/update" method="post">
+                        {% csrf_token%} 
+                    <label for="">First name:
+                        <input type="text" name="first_name" id="">
+                    </label>
+                    <label for="">Last name:
+                        <input type="text" name="last_name" id="">
+                    </label>
+                    <label for="">Email:
+                        <input type="text" name="email" id="">
+                    </label>
+                    <input type="submit" value="Update">    
+                </form>
+             
+                <div>
+                    <a href="/users/{{user.id}}">Show</a>
+                    <a href="/users">Go back</a>
+                </div>
+        </div>
+</body>
+</html>
